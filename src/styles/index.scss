@@ -1,0 +1,16 @@
+// BASIC
+@import "./variables.scss";
+@import "./helpers.scss";
+@import "./mixins.scss";
+@import "./base.scss";
+
+// MAIN
+@import "./app.scss";
+
+//CMPS
+@import "./cmps/AppHeader";
+@import "./cmps/AppBoard";
+@import "./cmps/TransactionList";
+@import "./cmps/TransactionPreview";
+@import "./cmps/Modal";
+@import "./cmps/Loader";
