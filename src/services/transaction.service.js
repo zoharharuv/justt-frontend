@@ -1,11 +1,18 @@
 import { httpService } from './http.service'
+// const gDatabase = require('../data/data.json');
+
+// (async () => {
+//     for (const d of gDatabase) {
+//         await add(d)
+//     }
+// })()
 
 export const transactionService = {
     query,
     getById,
     update,
     add,
-    remove,
+    remove
 }
 
 async function query() {
@@ -20,23 +27,14 @@ async function getById(transactionId) {
     return await httpService.get(`transaction/${transactionId}`)
 }
 
-function remove(transactionId) {
-    return httpService.delete(`transaction/${transactionId}`)
+async function remove(transactionId) {
+    return await httpService.delete(`transaction/${transactionId}`)
 }
 
-async function add(transactionId = null) {
-    let transaction
-    if (transactionId) {
-        transaction = await getById(transactionId)
-        delete transaction._id
-        transaction.title = transaction.title + ' copy'
-    } else {
-        console.log('ok add');
-    }
+async function add(transaction) {
     return await httpService.post('transaction', transaction)
 }
 
 async function update(transaction) {
-    const updatedTransaction = await httpService.put(`transaction/${transaction._id}`, transaction)
-    return updatedTransaction
+    return await httpService.put(`transaction/${transaction._id}`, transaction)
 }

@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { Box, Modal } from "@material-ui/core";
-import { Loader } from "./Loader";
+import { Edit } from "@material-ui/icons";
 
 const style = {
     position: 'absolute',
@@ -15,6 +16,7 @@ const style = {
 export const BasicModal = ({ onSelectedTransaction, selectedTransaction }) => {
 
     const {
+        _id,
         first_name,
         last_name,
         email,
@@ -36,13 +38,54 @@ export const BasicModal = ({ onSelectedTransaction, selectedTransaction }) => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
                 <Box sx={style}>
-                    <section className="modal-data flex column   gap">
-                        <h2>Customer name: {first_name + ' ' + last_name}</h2>
-                        <small>Customer info: {'Gender: ' + gender + ' | Phone: ' + phone + ' | Email: ' + email}</small>
-                        <h4>Address: {country + ', ' + city + ', ' + street}</h4>
-                        <h2>Transaction info: </h2>
-                        <h4>Currency: {currency}, Total price: {total_price}</h4>
-                        <h4>Card type: {credit_card_type}, card number: {credit_card_number}</h4>
+                    <section className="modal-data flex column">
+                        <div className="customer-info flex column gap">
+                            <h2>Customer info</h2>
+                            <small>
+                                <strong>Name: </strong>
+                                {first_name + ' ' + last_name}
+                            </small>
+                            <small>
+                                <strong>Gender: </strong>
+                                {gender}
+                            </small>
+                            <small>
+                                <strong>Phone: </strong>
+                                {phone}
+                            </small>
+                            <small>
+                                <strong>Email: </strong>
+                                {email}
+                            </small>
+                            <small>
+                                <strong>Address: </strong>
+                                {country + ', ' + city + ', ' + street}
+                            </small>
+                        </div>
+
+                        <div className="transaction-info flex column gap">
+                            <h2>Transaction info </h2>
+                            <small>
+                                <strong>Currency: </strong>
+                                {currency}
+                            </small>
+                            <small>
+                                <strong>Amount: </strong>
+                                {total_price}
+                            </small>
+                            <small>
+                                <strong>Card type: </strong>
+                                {credit_card_type}
+                            </small>
+                            <small>
+                                <strong>Card number: </strong>
+                                {credit_card_number}
+                            </small>
+                        </div>
+                        <Link to={`transaction/edit/${_id}`} className="flex align-center gap">
+                            <Edit fontSize="small"/>
+                            Edit transaction
+                        </Link>
                     </section>
                 </Box>
             </Modal>

@@ -2,15 +2,21 @@
 @import "./variables.scss";
 @import "./helpers.scss";
 @import "./mixins.scss";
+@import "./typography.scss";
 @import "./base.scss";
 
 // MAIN
 @import "./app.scss";
 
-//CMPS
+// PAGES
+@import "./pages/AppBoard";
+@import "./pages/CustomerList";
+@import "./pages/TransactionEdit";
+
+// CMPS
 @import "./cmps/AppHeader";
-@import "./cmps/AppBoard";
-@import "./cmps/TransactionList";
-@import "./cmps/TransactionPreview";
-@import "./cmps/Modal";
 @import "./cmps/Loader";
+@import "./cmps/Modal";
+@import "./cmps/transaction-cmps/TransactionList";
+@import "./cmps/transaction-cmps/TransactionPreview";
+@import "./cmps/customer-cmps/CustomerPreview";

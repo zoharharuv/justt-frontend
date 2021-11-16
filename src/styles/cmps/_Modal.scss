@@ -1,9 +1,22 @@
 .modal-data {
     padding: 1rem;
-    gap: 1rem;
+    gap: 20px;
     span {
-        padding:  0.5rem 1rem;
+        padding: 0.5rem 1rem;
         border-bottom: 1px solid $mainColor;
+    }
+    h2 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid darken($mainColor, 20);
+    }
+    a {
+        font-family: roboto-bold;
+        color: $blueClr;
+        align-self: center;
+        transition: color 0.2s;
+        &:hover {
+            color: lighten($blueClr, 15);
+        }
     }
 }
 

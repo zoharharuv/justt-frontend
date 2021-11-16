@@ -13,6 +13,16 @@ function debounce(func, wait, immediate) {
     };
 };
 
+function getEmptyTransaction() {
+    return {
+        total_price: 0.01,
+        currency: '',
+        credit_card_type: '',
+        credit_card_number: ''
+    }
+}
+
 export const utilService = {
-    debounce
+    debounce,
+    getEmptyTransaction
 }

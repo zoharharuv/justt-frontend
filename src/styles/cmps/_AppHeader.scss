@@ -14,6 +14,10 @@
         @include for-mobile-layout {
             font-size: 1rem;
         }
+        transition: color 0.2s;
+        &:hover {
+            color: darken(lightgray, 10);
+        }
     }
     .inputLabel {
         color: "lightgray";

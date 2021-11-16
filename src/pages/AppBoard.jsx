@@ -4,7 +4,7 @@ import { BasicModal } from "../cmps/Modal"
 import { Loader } from "../cmps/Loader"
 import { transactionService } from '../services/transaction.service';
 
-export const AppBoard = ({ }) => {
+export const AppBoard = () => {
     const [transactions, setTransactions] = useState(null)
     const [selectedTransaction, setSelectedTransaction] = useState(null)
 

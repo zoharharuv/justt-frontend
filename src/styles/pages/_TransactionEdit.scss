@@ -1,0 +1,40 @@
+.transaction-edit {
+    position: relative;
+    justify-content: center;
+    background: #f2f2f2;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-bottom: 1rem;
+    h1 {
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+        color: #ffffff;
+        background: linear-gradient(to right, #00c6ff 0%, #0072ff 51%, #00c6ff 100%);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin: 1.25rem 0;
+        input,
+        select {
+            padding: 0.3rem 0.5rem;
+            border: 1px solid lightgray;
+            border-radius: 4px;
+            &:focus {
+                outline: 1px solid darken(lightgray, 10);
+            }
+        }
+        .input-container {
+            gap: 0.4rem;
+            small{
+                padding-inline-start: 0.4rem;
+            }
+        }
+    }
+    .delete-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+}

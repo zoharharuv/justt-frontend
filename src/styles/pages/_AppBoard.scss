@@ -1,5 +1,6 @@
 .app-board {
     gap: 20px;
+    overflow-y: auto;
     .MuiPagination-ul {
         @include for-mobile-layout {
             flex-wrap: nowrap;
